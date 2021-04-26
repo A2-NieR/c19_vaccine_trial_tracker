@@ -1,0 +1,51 @@
+body {
+  font-family: 'Roboto';
+}
+
+h1 {
+  text-align: center;
+  margin: 1em;
+}
+
+div.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiButton-root {
+  height: 100%;
+}
+
+.MuiButton-label {
+  padding: 0px, 16px;
+}
+
+div.info {
+  display: flex;
+  justify-content: center;
+  margin: 2em;
+}
+
+.selector {
+  width: 100%;
+  color: white;
+  background-image: linear-gradient(
+    45deg,
+    rgb(33, 150, 243) 30%,
+    rgb(33, 203, 243)
+  );
+  justify-content: center;
+}
+
+.MTableToolbar-root-5 {
+  background-color: #eceff1;
+}
+
+.Component-paginationToolbar-2 {
+  background-color: #eceff1;
+}
+
+.MuiTypography-root.MuiTypography-h6 {
+  font-size: medium;
+  color: #0d47a1;
+}

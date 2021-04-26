@@ -1,0 +1,64 @@
+{
+  "vaccines": [
+    {
+      "name": "Pfizer BioNTech",
+      "tradeName": "Comirnaty",
+      "id": "BNT162b2",
+      "type": "mRNA"
+    },
+    {
+      "name": "Moderna",
+      "tradeName": "Moderna COVID‑19 Vaccine",
+      "id": "mRNA-1273",
+      "type": "mRNA"
+    },
+    {
+      "name": "Johnson & Johnson",
+      "tradeName": "Janssen COVID-19 Vaccine",
+      "id": "JNJ-78436735",
+      "type": "Vector"
+    },
+    {
+      "name": "Oxford AstraZeneca",
+      "tradeName": "Vaxzevria, Covishield",
+      "id": "AZD1222",
+      "type": "Viral Vector"
+    },
+    {
+      "name": "Sputnik V",
+      "tradeName": "Sputnik V",
+      "id": "Gam-COVID-Vac",
+      "type": "Viral Vector"
+    },
+    {
+      "name": "Novavax",
+      "tradeName": "Covovax",
+      "id": "NVX-CoV2373",
+      "type": "Subunit (Protein)"
+    },
+    {
+      "name": "BBIBP-CorV",
+      "tradeName": "Sinopharm",
+      "id": "BBIBP-CorV",
+      "type": "Inactivated"
+    },
+    {
+      "name": "CoronaVac",
+      "tradeName": "Sinovac",
+      "id": "CoronaVac",
+      "type": "Inactivated"
+    },
+    {
+      "name": "Covaxin",
+      "tradeName": "Covaxin",
+      "id": "BBV152",
+      "type": "Inactivated"
+    },
+    {
+      "name": "Convidecia",
+      "tradeName": "Convidecia",
+      "id": "AD5-nCOV",
+      "type": "Viral Vector"
+    }
+  ]
+}
