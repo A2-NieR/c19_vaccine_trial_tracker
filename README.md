@@ -21,3 +21,10 @@ The data gets extracted and is put into a sortable table showing the following d
 <br>
 
 ![Screenshot](/img/screenshot.png)
+
+<br>
+
+## Todo
+
+- Responsive Layout
+- Quick overview tiles
