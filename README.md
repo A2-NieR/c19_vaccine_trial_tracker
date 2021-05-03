@@ -20,11 +20,16 @@ The data gets extracted and is put into a sortable table showing the following d
 
 <br>
 
-![Screenshot](/img/screenshot.png)
+## Screenshots
+
+### Home view:
 
 <br>
 
-## Todo
+![Screenshot home](/img/home.png)
 
-- Responsive Layout
-- Quick overview tiles
+### Detail view:
+
+<br>
+
+![Screenshot table](/img/table.png)
