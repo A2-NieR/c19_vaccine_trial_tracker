@@ -43,8 +43,10 @@ const App = () => {
           counter++;
         }
       }
+      return counter;
+    } else {
+      return undefined;
     }
-    return counter;
   };
 
   const getCompletedTrials = (name) => {
@@ -57,8 +59,10 @@ const App = () => {
           counter++;
         }
       }
+      return counter;
+    } else {
+      return undefined;
     }
-    return counter;
   };
 
   return (
@@ -97,12 +101,16 @@ const App = () => {
                   setMenu();
                 }}>
                 <h2>{vax.name}</h2>
-                <p className='active'>
-                  Active Trials: {getActiveTrials(vax.name)}
-                </p>
-                <p className='completed'>
-                  Completed Trials:{getCompletedTrials(vax.name)}
-                </p>
+                {getActiveTrials(vax.name) !== undefined && (
+                  <p className='active'>
+                    Active Trials: {getActiveTrials(vax.name)}
+                  </p>
+                )}
+                {getCompletedTrials(vax.name) !== undefined && (
+                  <p className='completed'>
+                    Completed Trials:{getCompletedTrials(vax.name)}
+                  </p>
+                )}
               </button>
             ))}
           </div>
