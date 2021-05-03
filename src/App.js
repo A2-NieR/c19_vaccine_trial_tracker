@@ -36,10 +36,12 @@ const App = () => {
   const getActiveTrials = (name) => {
     let counter = 0;
     const object = JSON.parse(localStorage.getItem(name));
-    for (let i = 0; i < object.length; i++) {
-      const complDate = object[i].CompletionDate[0];
-      if (complDate !== undefined && new Date(complDate) - new Date() >= 0) {
-        counter++;
+    if (object) {
+      for (let i = 0; i < object.length; i++) {
+        const complDate = object[i].CompletionDate[0];
+        if (complDate !== undefined && new Date(complDate) - new Date() >= 0) {
+          counter++;
+        }
       }
     }
     return counter;
@@ -48,10 +50,12 @@ const App = () => {
   const getCompletedTrials = (name) => {
     let counter = 0;
     const object = JSON.parse(localStorage.getItem(name));
-    for (let i = 0; i < object.length; i++) {
-      const complDate = object[i].CompletionDate[0];
-      if (complDate !== undefined && new Date(complDate) - new Date() < 0) {
-        counter++;
+    if (object) {
+      for (let i = 0; i < object.length; i++) {
+        const complDate = object[i].CompletionDate[0];
+        if (complDate !== undefined && new Date(complDate) - new Date() < 0) {
+          counter++;
+        }
       }
     }
     return counter;
