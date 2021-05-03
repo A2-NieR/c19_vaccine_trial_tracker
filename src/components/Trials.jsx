@@ -1,5 +1,4 @@
-import React, { useEffect, useState, forwardRef } from 'react';
-import axios from 'axios';
+import React, { forwardRef } from 'react';
 import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -45,57 +44,41 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />)
 };
 
-const Trials = ({ vaccine }) => {
-  const [trials, setTrials] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const request = `https://clinicaltrials.gov/api/query/study_fields?expr=${vaccine.id}&fields=Condition,OfficialTitle,Phase,StartDate,CompletionDate,LastUpdatePostDate,EnrollmentCount,NCTId&fmt=json`;
-
-        const response = await axios.get(request);
-        setTrials(response.data.StudyFieldsResponse.StudyFields);
-      } catch (error) {
-        throw new Error(error);
-      }
-    };
-
-    fetchData();
-
-    if (trials !== []) {
-      for (let i = 0; i < trials.length; i++) {
-        trials[i].EnrollmentCount[0] = parseFloat(
-          trials[i].EnrollmentCount[0]
-        ).toLocaleString();
-
-        // trials[i].StartDate[0] = new Date(trials[i].StartDate[0]);
-        // trials[i].CompletionDate[0] = new Date(trials[i].CompletionDate[0]);
-        // trials[i].LastUpdate[0] = new Date(trials[i].LastUpdate[0]);
-        // console.log(trials);
-      }
-    }
-  }, [vaccine.id]);
-
+const Trials = ({ vaccine, info, number }) => {
   // Redirect urls for trials
   const openStudy = (NCTId) => {
     const url = `https://clinicaltrials.gov/ct2/show/study/${NCTId}`;
     window.open(url, '_blank');
   };
 
-  const searchResult = `Results for '${vaccine.id}':`;
+  const setRows = () => {
+    if (number <= 5) {
+      return 5;
+    } else if (number <= 10) {
+      return 10;
+    } else {
+      return 20;
+    }
+  };
+
+  const searchResult = `Results for '${info.id}':`;
 
   return (
     <div style={{ maxWidth: '100%' }}>
-      {trials !== [] && (
+      {info !== undefined && (
         <div className='info'>
-          <b>Name:</b>&nbsp;{vaccine.name}
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <b>Tradename:</b>&nbsp;{vaccine.tradeName}
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <b>Vaccine-Type:</b>&nbsp;{vaccine.type}
+          <div className='infoName'>
+            <b>Name:</b>&nbsp;{info.name}
+          </div>
+          <div className='infoTrade'>
+            <b>Tradename:</b>&nbsp;{info.tradeName}
+          </div>
+          <div className='infoType'>
+            <b>Vaccine-Type:</b>&nbsp;{info.type}
+          </div>
         </div>
       )}
-      {trials !== [] && (
+      {vaccine !== undefined && (
         <MaterialTable
           icons={tableIcons}
           title={searchResult}
@@ -125,7 +108,7 @@ const Trials = ({ vaccine }) => {
             },
             { title: 'NCTId', field: 'NCTId' }
           ]}
-          data={trials}
+          data={vaccine}
           actions={[
             {
               icon: tableIcons.OpenInBrowser,
@@ -135,8 +118,9 @@ const Trials = ({ vaccine }) => {
           ]}
           options={{
             actionsColumnIndex: -1,
-            pageSize: 20,
-            headerStyle: { backgroundColor: '#eceff1' }
+            pageSize: setRows(),
+            headerStyle: { backgroundColor: '#eceff1' },
+            search: false
           }}
         />
       )}

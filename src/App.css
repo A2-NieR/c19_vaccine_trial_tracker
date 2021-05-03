@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto';
 }
@@ -12,6 +16,161 @@ div.buttons {
   justify-content: center;
 }
 
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .grid {
+    padding-top: 2rem;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: auto;
+    margin: 0em 1em;
+  }
+
+  .info {
+    font-size: small;
+    flex-direction: row;
+  }
+
+  .infoName,
+  .infoTrade,
+  .infoType {
+    padding-bottom: 0.5rem;
+    margin-right: 2rem;
+  }
+
+  .MuiTypography-root.MuiTypography-h6 {
+    font-size: small;
+    color: hsl(216, 85%, 34%);
+  }
+
+  .Component-horizontalScrollContainer-12 {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 600px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .grid {
+    padding-top: 2rem;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: auto;
+    margin: 0em 1em;
+  }
+
+  .info {
+    display: flex;
+  }
+
+  .infoName,
+  .infoTrade,
+  .infoType {
+    padding-bottom: 0.5rem;
+    margin-right: 2rem;
+  }
+
+  .MuiTypography-root.MuiTypography-h6 {
+    font-size: small;
+    color: hsl(216, 85%, 34%);
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid {
+    padding-top: 2rem;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: auto auto;
+    margin: 0em 1em;
+  }
+
+  .MuiTypography-root.MuiTypography-h6 {
+    font-size: medium;
+    color: hsl(216, 85%, 34%);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid {
+    padding-top: 2rem;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: auto auto;
+    margin: 0em 1em;
+  }
+
+  .MuiTypography-root.MuiTypography-h6 {
+    font-size: medium;
+    color: hsl(216, 85%, 34%);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .grid {
+    padding-top: 2rem;
+    align-self: center;
+    justify-self: center;
+    display: grid;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0em 1em;
+  }
+
+  .MuiTypography-root.MuiTypography-h6 {
+    font-size: medium;
+    color: hsl(216, 85%, 34%);
+  }
+}
+
+.tile {
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  background-image: linear-gradient(
+    -45deg,
+    hsl(207, 90%, 54%) 30%,
+    hsl(191, 90%, 54%)
+  );
+  height: auto;
+  min-height: 1rem;
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: hsla(0, 0%, 0%, 0.19) 0px 10px 20px,
+    hsla(0, 0%, 0%, 0.23) 0px 6px 6px;
+}
+
+.responsiveTable {
+  width: auto;
+  margin: 0.5rem;
+}
+
+thead {
+  background-image: linear-gradient(
+    -45deg,
+    hsl(207, 90%, 54%) 30%,
+    hsl(191, 90%, 54%)
+  );
+}
+
+tr {
+  margin-bottom: 2rem;
+}
+
+.pivoted {
+  padding: 0.5rem 0rem;
+}
+
+.tdBefore {
+  color: hsl(207, 90%, 54%);
+}
+
 .MuiButton-root {
   height: 100%;
 }
@@ -21,31 +180,21 @@ div.buttons {
 }
 
 div.info {
-  display: flex;
   justify-content: center;
-  margin: 2em;
+  margin: 1rem;
 }
 
 .selector {
   width: 100%;
-  color: white;
-  background-image: linear-gradient(
-    45deg,
-    rgb(33, 150, 243) 30%,
-    rgb(33, 203, 243)
-  );
+  color: hsl(191, 90%, 54%);
+  background-color: white;
   justify-content: center;
 }
 
 .MTableToolbar-root-5 {
-  background-color: #eceff1;
+  background-color: hsl(204, 15%, 94%);
 }
 
 .Component-paginationToolbar-2 {
-  background-color: #eceff1;
-}
-
-.MuiTypography-root.MuiTypography-h6 {
-  font-size: medium;
-  color: #0d47a1;
+  background-color: hsl(204, 15%, 94%);
 }
