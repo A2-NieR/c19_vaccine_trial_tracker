@@ -20,6 +20,21 @@ const App = () => {
 
           const response = await axios.get(request);
           const responseData = response.data.StudyFieldsResponse.StudyFields;
+
+          let active = 0;
+          let completed = 0;
+
+          for (let i = 0; i < responseData.length; i++) {
+            if (new Date(responseData[i].CompletionDate) - new Date() >= 0) {
+              active++;
+            } else {
+              completed++;
+            }
+          }
+
+          responseData[0].activeTrials = active;
+          responseData[0].completedTrials = completed;
+
           localStorage.setItem(
             data.vaccines[i].name,
             JSON.stringify(responseData)
@@ -32,38 +47,6 @@ const App = () => {
 
     fetchData();
   }, []);
-
-  const getActiveTrials = (name) => {
-    let counter = 0;
-    const object = JSON.parse(localStorage.getItem(name));
-    if (object) {
-      for (let i = 0; i < object.length; i++) {
-        const complDate = object[i].CompletionDate[0];
-        if (complDate !== undefined && new Date(complDate) - new Date() >= 0) {
-          counter++;
-        }
-      }
-      return counter;
-    } else {
-      return undefined;
-    }
-  };
-
-  const getCompletedTrials = (name) => {
-    let counter = 0;
-    const object = JSON.parse(localStorage.getItem(name));
-    if (object) {
-      for (let i = 0; i < object.length; i++) {
-        const complDate = object[i].CompletionDate[0];
-        if (complDate !== undefined && new Date(complDate) - new Date() < 0) {
-          counter++;
-        }
-      }
-      return counter;
-    } else {
-      return undefined;
-    }
-  };
 
   return (
     <div className='App'>
@@ -101,16 +84,18 @@ const App = () => {
                   setMenu();
                 }}>
                 <h2>{vax.name}</h2>
-                {getActiveTrials(vax.name) !== undefined && (
-                  <p className='active'>
-                    Active Trials: {getActiveTrials(vax.name)}
-                  </p>
-                )}
-                {getCompletedTrials(vax.name) !== undefined && (
-                  <p className='completed'>
-                    Completed Trials:{getCompletedTrials(vax.name)}
-                  </p>
-                )}
+                <p className='active'>
+                  Active Trials:{' '}
+                  {JSON.parse(localStorage.getItem(vax.name))[0].activeTrials}
+                </p>
+
+                <p className='completed'>
+                  Completed Trials:
+                  {
+                    JSON.parse(localStorage.getItem(vax.name))[0]
+                      .completedTrials
+                  }
+                </p>
               </button>
             ))}
           </div>
