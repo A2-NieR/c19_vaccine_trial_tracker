@@ -11,6 +11,7 @@ const App = () => {
   const [vaccine, setVaccine] = useState();
   const [info, setInfo] = useState();
   const [menu, setMenu] = useState('home');
+  const [length, setLength] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,6 +49,16 @@ const App = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    setLength(localStorage.length);
+  }, [length]);
+
+  const getActive = (name) =>
+    JSON.parse(localStorage.getItem(name))[0].activeTrials;
+
+  const getCompleted = (name) =>
+    JSON.parse(localStorage.getItem(name))[0].completedTrials;
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -71,7 +82,7 @@ const App = () => {
           </Toolbar>
         </div>
       </header>
-      {menu === 'home' && (
+      {menu === 'home' && length === 10 && (
         <div className='container'>
           <div className='grid'>
             {data.vaccines.map((vax) => (
@@ -84,17 +95,11 @@ const App = () => {
                   setMenu();
                 }}>
                 <h2>{vax.name}</h2>
-                <p className='active'>
-                  Active Trials:{' '}
-                  {JSON.parse(localStorage.getItem(vax.name))[0].activeTrials}
-                </p>
+                <p className='active'>Active Trials: {getActive(vax.name)}</p>
 
                 <p className='completed'>
                   Completed Trials:
-                  {
-                    JSON.parse(localStorage.getItem(vax.name))[0]
-                      .completedTrials
-                  }
+                  {getCompleted(vax.name)}
                 </p>
               </button>
             ))}
