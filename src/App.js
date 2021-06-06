@@ -10,7 +10,7 @@ import data from './data/vaccines.json';
 const App = () => {
   const [vaccine, setVaccine] = useState();
   const [info, setInfo] = useState();
-  const [menu, setMenu] = useState('home');
+  const [menu, setMenu] = useState('about');
   const [length, setLength] = useState(0);
 
   useEffect(() => {
