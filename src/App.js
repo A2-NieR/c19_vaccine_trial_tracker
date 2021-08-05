@@ -83,28 +83,32 @@ const App = () => {
         </div>
       </header>
       {menu === 'home' && length > 0 && (
-        <div className='container'>
-          <div className='grid'>
-            {data.vaccines.map((vax) => (
-              <button
-                className='tile'
-                key={`button-${vax.id}`}
-                onClick={() => {
-                  setVaccine(JSON.parse(localStorage.getItem(vax.name)));
-                  setInfo(vax);
-                  setMenu();
-                }}>
-                <h2>{vax.name}</h2>
-                <p className='active'>Active Trials: {getActive(vax.name)}</p>
-
-                <p className='completed'>
-                  Completed Trials:
-                  {getCompleted(vax.name)}
-                </p>
-              </button>
-            ))}
+        <>
+          <div style={{ textAlign: 'center', padding: '1em' }}>
+            If the tiles do not appear, you might need to refresh the page.
           </div>
-        </div>
+          <div className='container'>
+            <div className='grid'>
+              {data.vaccines.map((vax) => (
+                <button
+                  className='tile'
+                  key={`button-${vax.id}`}
+                  onClick={() => {
+                    setVaccine(JSON.parse(localStorage.getItem(vax.name)));
+                    setInfo(vax);
+                    setMenu();
+                  }}>
+                  <h2>{vax.name}</h2>
+                  <p className='active'>Active Trials: {getActive(vax.name)}</p>
+
+                  <p className='completed'>
+                    Completed Trials: {getCompleted(vax.name)}
+                  </p>
+                </button>
+              ))}
+            </div>
+          </div>
+        </>
       )}
 
       {vaccine !== undefined && menu === undefined && (
