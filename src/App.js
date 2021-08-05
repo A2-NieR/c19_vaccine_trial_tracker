@@ -82,7 +82,7 @@ const App = () => {
           </Toolbar>
         </div>
       </header>
-      {menu === 'home' && length === 10 && (
+      {menu === 'home' && length > 0 && (
         <div className='container'>
           <div className='grid'>
             {data.vaccines.map((vax) => (

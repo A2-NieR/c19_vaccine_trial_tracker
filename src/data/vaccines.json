@@ -59,6 +59,24 @@
       "tradeName": "Convidecia",
       "id": "AD5-nCOV",
       "type": "Viral Vector"
+    },
+    {
+      "name": "CureVac",
+      "tradeName": "CVnCoV",
+      "id": "CVnCoV",
+      "type": "mRNA"
+    },
+    {
+      "name": "Sanofi",
+      "tradeName": "Sanofi-GSK COVID-19",
+      "id": "VAT00002",
+      "type": "Protein"
+    },
+    {
+      "name": "Valneva",
+      "tradeName": "Valneva COVID-19 vaccine",
+      "id": "VLA2001",
+      "type": "Inactivated virus"
     }
   ]
 }
