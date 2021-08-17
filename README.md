@@ -4,6 +4,10 @@
 
 <br>
 
+*Since this app uses the free tier of Heroku it goes to sleep from 1 AM (CET) - 7 AM (CET) and can not be used during this time.*
+
+<br>
+
 This tool was build to get quick insights about the landscape of clinical trials of current vaccines for Covid-19.
 
 Data is gathered from [clinicaltrials.gov](https://www.clinicaltrials.gov) using their API.
