@@ -127,6 +127,12 @@ const App = () => {
             the button at the end of a row.
           </p>
           <p>
+            <i>
+              Note: This application is unavailable between 1:00 PM - 7:00 AM
+              CET.
+            </i>
+          </p>
+          <p>
             <b>
               To start, simply click on one of the buttons in the home area.
             </b>
