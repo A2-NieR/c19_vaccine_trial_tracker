@@ -128,7 +128,7 @@ const App = () => {
           </p>
           <p>
             <i>
-              Note: This application is unavailable between 1:00 PM - 7:00 AM
+              Note: This application is unavailable between 1:00 AM - 7:00 AM
               CET.
             </i>
           </p>
