@@ -1,9 +1,13 @@
 # Covid-19 Vaccine Clinical Trial Tracker
 
-<a href="https://c19-vaccine-trials.herokuapp.com/">
+<br/>
+
+<div align="center">
+  <a href="https://c19-vaccine-trials.herokuapp.com/">
   
   ![Website](https://img.shields.io/website?url=https%3A%2F%2Fc19-vaccine-trials.herokuapp.com%2F)
-</a>
+  </a>
+</div>
 
 *Since this app uses the free tier of Heroku it goes to sleep from 1 AM (CET) - 7 AM (CET) and can not be used during this time.*
 
