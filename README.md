@@ -1,14 +1,15 @@
 # Covid-19 Vaccine Clinical Trial Tracker
 
-## **[Open Live Version](https://c19-vaccine-trials.herokuapp.com/)**
-
-<br>
+<a href="https://c19-vaccine-trials.herokuapp.com/">
+  
+  ![Website](https://img.shields.io/website?url=https%3A%2F%2Fc19-vaccine-trials.herokuapp.com%2F)
+</a>
 
 *Since this app uses the free tier of Heroku it goes to sleep from 1 AM (CET) - 7 AM (CET) and can not be used during this time.*
 
 <br>
 
-This tool was build to get quick insights about the landscape of clinical trials of current vaccines for Covid-19.
+This tool was build to get a quick overview of clinical trials of current vaccines for Covid-19.
 
 Data is gathered from [clinicaltrials.gov](https://www.clinicaltrials.gov) using their API.
 
