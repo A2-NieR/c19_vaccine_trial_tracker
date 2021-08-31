@@ -7,6 +7,7 @@
   
   ![Website](https://img.shields.io/website?url=https%3A%2F%2Fc19-vaccine-trials.herokuapp.com%2F)
   </a>
+  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/BunnyTheLifeguard/c19_vaccine_trial_tracker"> <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/BunnyTheLifeguard/c19_vaccine_trial_tracker">
 </div>
 
 *Since this app uses the free tier of Heroku it goes to sleep from 1 AM (CET) - 7 AM (CET) and can not be used during this time.*
