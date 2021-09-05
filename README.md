@@ -1,4 +1,4 @@
-# Covid-19 Vaccine Clinical Trial Tracker
+# Covid-19 Vaccine Clinical Trial Tracker (v1)
 
 <br/>
 
@@ -14,7 +14,7 @@
 
 <br>
 
-This tool was build to get a quick overview of clinical trials of current vaccines for Covid-19.
+This tool was built to get a quick overview of clinical trials of current vaccines for Covid-19.
 
 Data is gathered from [clinicaltrials.gov](https://www.clinicaltrials.gov) using their API.
 
